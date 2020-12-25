@@ -43,7 +43,7 @@ func ViewLog(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 		r.Body.Close()
 		return
 	}
-	conn, _, _, err := ws.UpgradeHTTP(r, w, nil)
+	conn, _, _, err := ws.UpgradeHTTP(r, w)
 	if err != nil {
 		log.Printf("ws upgrade fail , %s", err)
 		r.Body.Close()
